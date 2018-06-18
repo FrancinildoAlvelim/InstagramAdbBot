@@ -1,7 +1,8 @@
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 
 public class Run {
 
@@ -27,7 +28,7 @@ public class Run {
                     System.out.println("just roll");
                 }
 
-                Thread.sleep(3000);
+               // Thread.sleep(3000);
             }while (i<300);
         }
     }
@@ -84,12 +85,8 @@ public class Run {
     private static void click(){
         try {
             Runtime.getRuntime().exec("C:\\Users\\frana\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe shell input tap 600 300").waitFor();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (InterruptedException | IOException e) {
             e.printStackTrace();
         }
     }
-
-
 }
